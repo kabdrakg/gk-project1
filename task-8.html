@@ -1,0 +1,28 @@
+<script>
+    /*
+    8) *С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.
+    */
+    var n = 1;
+    var result;
+    function power(val, pow) {
+        if (n == 1) {
+            result = val;
+        }
+        if (pow == 0) {
+            alert(1);
+        } else if (pow == 1) {
+            alert(val);
+        } else if (n < pow) {
+            result = result * val;
+            n++;
+            power(val, pow);
+
+        } else {
+            alert(result);
+        }
+    }
+    var a = +prompt("Введите число");
+    var b = +prompt("Введите степень");
+    power(a, b);
+
+</script>
