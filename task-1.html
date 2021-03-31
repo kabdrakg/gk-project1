@@ -1,0 +1,21 @@
+<script>
+    //1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100
+    var i = 1;
+    var mass = [];
+    while (i <= 100) {
+        var n = 2;
+        var check = true;
+        while (n <= i / 2) {
+            if (i % n == 0) {
+                check = false;
+                break;
+            }
+            n++;
+        }
+        if (check) {
+            mass.push(i);
+        }
+        i++;
+    }
+    console.log(mass);
+</script>
