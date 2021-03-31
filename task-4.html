@@ -1,0 +1,28 @@
+<script>
+    // 4. * Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла.Выглядеть это должно так:
+    // for (…) {// здесь пусто}
+    var mass = [];
+    // Поэскпериментировала с выховом функции
+    function checkIt(i) {
+        mass.push(i);
+    }
+    for (var i = 0; i < 10; checkIt(i++)) {
+    }
+    console.log(mass.join(","));
+
+    //     5) * Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а
+    //     не 5:
+    //     x
+    //     xx
+    //     xxx
+    //     xxxx
+    //     xxxxx
+    var x = 1;
+    var string = '';
+    do {
+        string += "x";
+        x++;
+        console.log(string);
+    } while (x <= 20);
+
+</script>
