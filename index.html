@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="chessboard">
+
+    </div>
+    <script>
+        var table = document.createElement("table");
+        var tr, td, i;
+        var gorizont = 'ABCDEFGH';
+        var vertical = '87654321';
+        for (i = 0; i < 10; ++i) {
+            var value;
+            console.log(i);
+            tr = document.createElement("tr");
+            table.append(tr);
+
+            for (j = 0; j < 10; j++) {
+                // Заполним значенния вокруг доски
+                td = document.createElement("td");
+                if ((j == 0 || j == 9) && i > 0) {
+                    td.innerText = vertical[i - 1] || null;
+                } else if ((i == 0 || i == 9) && j > 0) {
+                    td.innerText = gorizont[j - 1] || null;
+                } else if ((j % 2 == 0 && i % 2 != 0) || (j % 2 != 0 && i % 2 == 0)) {
+                    td.style.backgroundColor = "grey";
+                }
+                if (j == 9 || i == 0) {
+                    td.style.transform = "rotate(180deg)";
+                }
+
+                //  Расставим  черные фигуры
+                if (i == 2 && j > 0 && j < 9) {
+                    td.innerHTML = "&#9823;";
+                } else if (i == 1) {
+                    if (j == 1 || j == 8) {
+                        td.innerHTML = "&#9820;";
+                    } else if (j == 2 || j == 7) {
+                        td.innerHTML = "&#9822;";
+                    } else if (j == 3 || j == 6) {
+                        td.innerHTML = "&#9821;";
+                    } else if (j == 4) {
+                        td.innerHTML = "&#9819;";
+                    } else if (j == 5) {
+                        td.innerHTML = "&#9818;";
+                    }
+                }
+
+                //  Расставим  белые фигуры
+                if (i == 7 && j > 0 && j < 9) {
+                    td.innerHTML = "&#9817;";
+                } else if (i == 8) {
+                    if (j == 1 || j == 8) {
+                        td.innerHTML = "&#9814;";
+                    } else if (j == 2 || j == 7) {
+                        td.innerHTML = "&#9816;";
+                    } else if (j == 3 || j == 6) {
+                        td.innerHTML = "&#9815;";
+                    } else if (j == 4) {
+                        td.innerHTML = "&#9813;";
+                    } else if (j == 5) {
+                        td.innerHTML = "&#9812;";
+                    }
+                }
+
+                tr.append(td);
+            }
+        }
+        document.getElementById("chessboard").append(table);
+
+
+    </script>
+</body>
+
+</html>
