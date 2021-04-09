@@ -1,0 +1,12 @@
+ td {
+    width: 50px;
+  }
+
+  tr {
+      height: 50px;
+  }
+
+  table {
+    border: 1px solid black;
+    text-align: center;
+  }
